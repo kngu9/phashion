@@ -28,15 +28,6 @@ static void * nogvl_hash(struct nogvl_hash_args * args) {
   return NULL;
 }
 
-static void * nogvl_hash_video(struct nogvl_hash_args * args) {
-	ulong64 hash;
-
-	args->retval = ph_dct_videohash(args->filename, hash);
-	args->hash = hash;
-
-	return NULL;
-}
-
 static VALUE image_hash_for(VALUE self, VALUE _filename) {
     ulong64 hash;
     struct nogvl_hash_args args;
